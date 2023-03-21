@@ -10,13 +10,25 @@ import SettingsScreen from './assets/pages/SettingsScreen';
 import AddScreen from './assets/pages/AddScreen';
 
 
+const MyTheme = {
+    dark: false,
+    colors: {
+      primary: 'rgb(0, 0, 0)',
+      background: 'rgb(0, 0, 0)',
+      card: 'rgb(38, 38, 38)',
+      text: 'rgb(255, 255, 255)',
+      border: 'rgb(148, 26, 29)',
+      notification: 'rgb(0, 0, 0)',
+    },
+  };
+  
 
 const Stack = createNativeStackNavigator();
   
   function App() {
     const [fontsLoaded] = useFonts({'Trebuchet': require('./assets/fonts/trebuc.ttf')})
     return (
-      <NavigationContainer>
+      <NavigationContainer theme={MyTheme}>
         <Stack.Navigator>
           <Stack.Screen name="Home" component={DirectoryScreen} options={{orientation: 'all'}}/>
           <Stack.Screen name="Details" component={DetailsScreen} options={{orientation: 'all'}}/>
